@@ -1,0 +1,30 @@
+{
+  "name": "screen-jobs",
+  "version": "0.0.0",
+  "description": "web service to screen jobs based on MEAN stack",
+  "main": "index.js",
+  "scripts": {},
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ansteh/screen-jobs.git"
+  },
+  "keywords": [
+    "screen jobs",
+    "indeed",
+    "web service"
+  ],
+  "author": "Andre Stehle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ansteh/screen-jobs/issues"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.5"
+  },
+  "devDependencies": {}
+}

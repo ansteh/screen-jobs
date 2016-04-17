@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+*.map
+node_modules
+credentials.js
+tmp.js
