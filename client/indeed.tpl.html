@@ -1,2 +1,23 @@
+
 <div>{{ message }}</div>
-<pre>{{ results | json }}</pre>
+<div ng-cloak>
+  <md-content>
+    <md-list>
+      <md-subheader class="md-no-sticky">Indeed Jobs</md-subheader>
+      <md-list-item class="md-3-line md-long-text" ng-repeat="job in jobs">
+        <div class="md-list-item-text" layout="column">
+          <h3>
+            <md-icon aria-label="title" class="material-icons" style="font-size: 24px;">title</md-icon>
+            <span style="vertical-align: middle;">{{ job.jobtitle }}</span>
+          </h3>
+          <h4>
+            <md-icon aria-label="business" class="material-icons" style="font-size: 24px;">business</md-icon>
+            <span style="vertical-align: middle;">{{ job.company }}</span>
+          </h4>
+          <p>{{ job.snippet }}</p>
+        </div>
+      </md-list-item>
+      <md-divider></md-divider>
+    </md-list>
+  </md-content>
+</div>

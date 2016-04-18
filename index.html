@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -17,7 +19,33 @@
   </head>
 
   <body>
-    <div style="width: 600px; margin: auto;" >
+    <div style="width: 600px; margin: auto;">
+      <!--<pre>{{ jobs | json }}</pre>-->
+      <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
+        <md-content class="md-padding">
+          <form ng-submit="$event.preventDefault()">
+            <md-autocomplete
+                ng-disabled="ctrl.isDisabled"
+                md-no-cache="ctrl.noCache"
+                md-selected-item="ctrl.selectedItem"
+                md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                md-search-text="ctrl.searchText"
+                md-selected-item-change="ctrl.selectedItemChange(item)"
+                md-items="item in ctrl.querySearch(ctrl.searchText)"
+                md-item-text="item.display"
+                md-min-length="2"
+                placeholder="What is your favorite US state?">
+              <md-item-template>
+                <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+              </md-item-template>
+              <md-not-found>
+                No matching for query "{{ctrl.searchText}}" were found.
+              </md-not-found>
+            </md-autocomplete>
+          </form>
+        </md-content>
+      </div>
+
       <indeed></indeed>
     </div>
   </body>
