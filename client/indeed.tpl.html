@@ -17,6 +17,13 @@
             <span style="vertical-align: middle;">{{ job.company }}</span>
           </h4>
           <p>{{ job.snippet }}</p>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <a href="{{ job.url }}" target="_blank">
+              <md-button class="md-icon-button" aria-label="More">
+                <md-icon aria-label="title" class="material-icons" md-svg-icon="material:ic_launch_24px" style="font-size: 24px; color: rgb(255,82,82);"></md-icon>
+              </md-button>
+            </a>
+          </section>
         </div>
       </md-list-item>
       <md-divider></md-divider>

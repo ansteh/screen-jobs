@@ -1,5 +1,6 @@
-var request      = require('request');
-var credentials  = require('../credentials.js');
+const request      = require('request');
+const credentials  = require('../credentials.js');
+const Jobs         = require('./storage.js');
 
 if(credentials === undefined || credentials.publisher === undefined){
   console.log('indeed API publisher key is not defined in credentials.js');
@@ -33,12 +34,17 @@ function indeed(query, callback){
   request(options, function(error, response, body){
     if (!error && response.statusCode == 200) {
       callback(JSON.parse(body));
+    } else {
+      callback(Jobs.findByQuery(query));
     }
   });
 };
 
 module.exports = function(callback){
   return function (query){
-    indeed(query, callback);
+    indeed(query, function(json){
+      Jobs.save(json);
+      callback(json);
+    });
   };
 };

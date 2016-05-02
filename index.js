@@ -4,6 +4,7 @@ const express        = require('express');
 const app            = express();
 const path           = require('path');
 const credentials    = require('./credentials.js');
+const autocomplete   = require('./server/corpus.js');
 
 app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 app.use('/client', express.static(path.join(__dirname, '/client')));
@@ -13,7 +14,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/corpus', function(req, res){
-  res.json(require('./server/corpus.js'));
+  res.json(autocomplete.queries());
 });
 
 const server = require('http').Server(app);

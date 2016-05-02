@@ -11,6 +11,8 @@ paths.sprite = {
   src:        [
       'bower_components/material-design-icons/editor/svg/design/ic_title_24px.svg',
       'bower_components/material-design-icons/communication/svg/design/ic_business_24px.svg',
+      'bower_components/material-design-icons/action/svg/design/ic_search_24px.svg',
+      'bower_components/material-design-icons/action/svg/design/ic_launch_24px.svg',
   ]
 };
 
