@@ -1,6 +1,11 @@
 (function(){
   var app = angular.module('app', ['ngMaterial']);
 
+  app.config(['$mdIconProvider', function($mdIconProvider) {
+    $mdIconProvider
+      .iconSet('material', 'client/icons/sets/css/svg/sprite.css.svg');
+  }]);
+
   app.factory('Search', function(){
     var socket = io();
 

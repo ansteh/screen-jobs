@@ -5,6 +5,7 @@ const app            = express();
 const path           = require('path');
 const credentials    = require('./credentials.js');
 
+app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 app.use('/client', express.static(path.join(__dirname, '/client')));
 
 app.get('/', function(req, res){
@@ -12,7 +13,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/corpus', function(req, res){
-  res.json(require('./corpus.js'));
+  res.json(require('./server/corpus.js'));
 });
 
 const server = require('http').Server(app);
@@ -20,7 +21,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function(socket){
-  const search = require('./search.js')(function(jobs){
+  const search = require('./server/search.js')(function(jobs){
     socket.emit('results', jobs);
   });
 

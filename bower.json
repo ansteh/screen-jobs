@@ -1,0 +1,15 @@
+{
+  "name": "scree-jobs",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.4.9",
+    "angular-animate": "1.4.9",
+    "angular-aria": "1.4.9",
+    "angular-material": "1.0.8",
+    "angular-messages": "1.4.9",
+    "angular-resource": "1.4.9",
+    "bluebird": "3.3.5",
+    "material-design-icons": "~2.2.3"
+  },
+  "private": true
+}

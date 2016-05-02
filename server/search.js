@@ -1,5 +1,5 @@
 var request      = require('request');
-var credentials  = require('./credentials.js');
+var credentials  = require('../credentials.js');
 
 if(credentials === undefined || credentials.publisher === undefined){
   console.log('indeed API publisher key is not defined in credentials.js');

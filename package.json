@@ -26,5 +26,9 @@
     "request": "^2.72.0",
     "socket.io": "^1.4.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-svg-sprite": "^1.2.19"
+  }
 }
